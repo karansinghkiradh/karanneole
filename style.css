@@ -1,0 +1,237 @@
+/* Color Palette (Retro aesthetic) */
+:root {
+  --color-text: #4D455D;      /* Primary text color (dark) */
+  --color-accent: #E96479;    /* Accent color (buttons, highlights) */
+  --color-bg: #F5E9CF;       /* Background base (cream) */
+  --color-secondary: #7DB9B6; /* Secondary accent (teal) */
+}
+
+/* Global Resets/Defaults */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+}
+h1, h2, h3, h4 {
+  font-family: 'VT323', monospace; /* Retro pixel-style font for headings */
+  margin-top: 0;
+}
+h1 { font-size: 3rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+/* Links */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header and Navigation */
+header {
+  position: sticky;
+  top: 0;
+  background: var(--color-bg);
+  border-bottom: 2px solid var(--color-accent);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .logo a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+header .logo {
+  font-size: 1.5rem;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+nav a {
+  color: var(--color-text);
+  font-weight: bold;
+  text-decoration: none;
+}
+nav a:hover {
+  color: var(--color-accent);
+}
+nav a.active {
+  color: var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+}
+
+/* Main Content Sections */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+section {
+  padding: 4rem 0;
+  scroll-margin-top: 5rem;
+}
+#hero {
+  text-align: center;
+  padding: 6rem 0;
+}
+.mission {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* Section Headings (underline accent line) */
+section h2 {
+  position: relative;
+  display: inline-block;
+}
+section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--color-accent);
+  position: relative;
+  top: 0.4rem;
+}
+
+/* Projects */
+.project {
+  margin-bottom: 2rem;
+}
+.project h3 {
+  margin-bottom: 0.5rem;
+}
+.tag {
+  background: var(--color-secondary);
+  color: var(--color-text);
+  padding: 0.2rem 0.5rem;
+  font-size: 0.9rem;
+  border-radius: 3px;
+  margin-right: 0.5rem;
+  margin-top: 0.2rem;
+  display: inline-block;
+}
+
+/* Newsletter Cards */
+.newsletter-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.newsletter-card {
+  flex: 1 1 300px;
+  border: 2px solid var(--color-text);
+  border-radius: 4px;
+  padding: 1rem;
+}
+.newsletter-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+.newsletter-card p {
+  margin-bottom: 0.5rem;
+}
+.read-more {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* Subscribe Section */
+.subscribe {
+  text-align: center;
+  margin-top: 3rem;
+}
+.subscribe h4 {
+  margin-bottom: 1rem;
+}
+.subscribe form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.subscribe input[type=email] {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 2px solid var(--color-text);
+  border-radius: 4px;
+}
+.subscribe input[type=email]:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+button, input[type=submit] {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--color-accent);
+  background: transparent;
+  color: var(--color-accent);
+  cursor: pointer;
+  border-radius: 4px;
+}
+button:hover, input[type=submit]:hover {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* Footer/Contact */
+footer {
+  background: var(--color-text);
+  color: var(--color-bg);
+  text-align: center;
+  padding: 4rem 1rem;
+}
+footer h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+footer a {
+  color: var(--color-bg);
+  text-decoration: none;
+  font-weight: bold;
+}
+footer a:hover {
+  color: var(--color-accent);
+}
+footer p {
+  margin: 0.5rem 0;
+}
+footer p:last-child {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive: Mobile layout adjustments */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .newsletter-list {
+    flex-direction: column;
+  }
+}
